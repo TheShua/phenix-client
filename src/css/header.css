@@ -1,0 +1,52 @@
+.main-head {
+	border-top: 10px solid #ffffcd;
+	background-color: var(--headBack);
+	min-height: 100px;
+	height: 15vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+}
+
+.main-head h1 {
+	font-size: 4em;
+	font-variation-settings: 'wght' 700;
+	text-align: right;
+	position: relative;
+	margin-right: 2vw;
+	top: 10px;
+	text-transform: uppercase;
+	text-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.main-head .toggleMenu {
+	position: relative;
+	top: 6vh;
+	margin-left: 30px;
+}
+
+.main-head .toggleMenu .picture {
+	background: radial-gradient(#ffffcd, var(--headBack));
+	border: 10px solid var(--headBack);
+	font-weight: bold;
+	height: 175px;
+	width: 175px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.main-head .toggleMenu .picture h3 {
+	font-family: var(--fontTitle);
+	font-variation-settings: 'wght' 900;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	transition: all 0.1s ease-in;
+}
+
+.main-head .toggleMenu .picture:hover h3 {
+	transform: scale(1.3);
+}
