@@ -1,3 +1,22 @@
 .App {
 	min-height: 100vh;
+	height: 100%;
+}
+
+.bodyApp {
+	min-height: 85vh;
+	height: 100%;
+	width: 100%;
+	display: grid;
+	justify-content: stretch;
+	align-items: stretch;
+	align-content: stretch;
+	grid-template-rows: 100%;
+	grid-template-columns: calc(8vw + 175px) 1fr;
+}
+
+aside.sidebar {
+	background: #311f1d;
+	border-right: 15px solid #55312d;
+	height: 100%;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import apiHandler from '../api/apiHandler';
-import UserContext from './Auth/UserContext';
+import apiHandler from '../../api/apiHandler';
+import UserContext from '../Auth/UserContext';
 
 export class SignInForm extends Component {
 	static contextType = UserContext;
@@ -16,7 +16,6 @@ export class SignInForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(this.state);
 		apiHandler
 			.signin(this.state)
 			.then((data) => {

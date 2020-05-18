@@ -1,0 +1,29 @@
+.add-me {
+	color: #c2d5b0;
+}
+
+.list-players {
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+}
+
+.list-players li {
+	cursor: pointer;
+	display: inline;
+	background: var(--color);
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5em 0.5em;
+	border-bottom: 1px dotted black;
+	font-size: 0.8em;
+	font-family: var(--fontSubTitle);
+}
+
+.list-players li:hover .add-me {
+	color: #6aa120;
+}
+
+.list-players li:hover {
+	background: #c2d5b0;
+}

@@ -1,0 +1,252 @@
+.character-sheet {
+	background: var(--color);
+	width: 90%;
+	margin: 5% auto;
+	border-radius: 10px;
+	display: grid;
+	grid-gap: 0.5em;
+	grid-template-areas:
+		'heading heading heading'
+		'skills hitpoints roleplay'
+		'skills attacks features'
+		'proficiencies equipment features';
+	grid-template-columns: repeat(1, 1fr 1fr 1fr);
+	grid-template-rows: 150px auto auto auto;
+}
+
+.character-sheet .heading {
+	grid-area: heading;
+	display: grid;
+	grid-template-columns: 40% 60%;
+}
+
+.character-sheet .attr-skills {
+	grid-area: skills;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	padding-left: 0.5em;
+}
+
+.character-sheet .attr-skills .column:nth-child(1) {
+	/* background: var(--grey); */
+	padding: 1em 0.5em;
+	padding: 0em 0.5em;
+	border-radius: 10px;
+}
+
+.character-sheet .little-bloc,
+.character-sheet .big-bloc,
+.character-sheet .mid-bloc {
+	border-top: 5px double var(--back-color-one);
+	border-bottom: 5px double var(--back-color-one);
+	border-left: 2px solid var(--back-color-one);
+	border-right: 2px solid var(--back-color-one);
+	padding: 0.5em;
+	border-radius: 15px;
+	font-size: 0.65em;
+	position: relative;
+	margin-bottom: 0.75em;
+}
+
+.character-sheet .little-bloc span {
+	background: var(--color);
+	position: absolute;
+	top: -0.3em;
+	right: -0.3em;
+	padding: 0.5em 0.75em;
+	border-radius: 50%;
+	text-align: center;
+	border-top: 5px double var(--back-color-one);
+	border-bottom: 5px double var(--back-color-one);
+	border-left: 2px solid var(--back-color-one);
+	border-right: 2px solid var(--back-color-one);
+	transition: all 0.2s ease-in;
+	font-family: var(--fontTitle);
+	font-weight: bold;
+}
+
+.character-sheet .little-bloc:hover span {
+	transform: scale(1.5);
+}
+
+.character-sheet .big-bloc span {
+	display: block;
+}
+
+.character-sheet .big-bloc.top {
+	margin-bottom: 0.2em;
+	border-radius: 15px 15px 0 0;
+	border-bottom: 2px solid var(--back-color-one);
+}
+
+.character-sheet .big-bloc.mid {
+	border-radius: 0;
+	border-bottom: 2px solid var(--back-color-one);
+	border-top: 2px solid var(--back-color-one);
+	margin-bottom: 0.2em;
+}
+
+.character-sheet .big-bloc.bot {
+	border-radius: 0 0 15px 15px;
+	border-top: 2px solid var(--back-color-one);
+}
+
+.character-sheet .big-bloc h4,
+.character-sheet .big-element h4,
+.character-sheet .mid-bloc h4 {
+	margin-top: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.character-sheet .big-bloc span.sub,
+.character-sheet .mid-bloc span.sub {
+	color: var(--grey);
+}
+
+.character-sheet .big-bloc strong,
+.character-sheet .mid-bloc strong {
+	display: block;
+	text-align: center;
+	margin: 0.3em 0;
+	font-size: 1.8em;
+}
+
+.character-sheet .attr-skills .attribute {
+	background: var(--color);
+	border-radius: 20px;
+	font-size: 0.5em;
+	display: flex;
+	border-top: 5px double var(--back-color-one);
+	border-bottom: 5px double var(--back-color-one);
+	border-left: 2px solid var(--back-color-one);
+	border-right: 2px solid var(--back-color-one);
+	padding: 0.5em;
+	position: relative;
+	flex-direction: column;
+	margin-bottom: 1.5em;
+}
+.character-sheet .attr-skills .attribute h4 {
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+}
+.character-sheet .attr-skills .attribute strong {
+	display: block;
+	text-align: center;
+	font-size: 2.5em;
+	margin: 0.4em 0;
+}
+.character-sheet .attr-skills .attribute span {
+	position: absolute;
+	background: var(--color);
+	bottom: -15px;
+	left: calc(50% - 15px);
+	width: 30px;
+	display: flex;
+	border: 2px solid var(--back-color-one);
+	font-family: var(--fontTitle);
+	font-weight: bold;
+	border-radius: 20px;
+	line-height: 2em;
+	font-size: 1.2em;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in;
+}
+
+.character-sheet div > .row {
+	display: grid;
+	justify-content: stretch;
+	margin-bottom: 0.5em;
+}
+.character-sheet div > .row.two {
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 0.5em;
+}
+.character-sheet div > .row.three {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.character-sheet div > .row.four {
+	grid-template-columns: 60% 1fr 1fr 1fr;
+}
+
+.character-sheet .death-save .row > div {
+	font-weight: bold;
+}
+
+.character-sheet .death-save h4 {
+	margin-top: 1.8em;
+}
+
+.character-sheet div > .row .big-element {
+	border-top: 5px double var(--back-color-one);
+	border-bottom: 5px double var(--back-color-one);
+	border-left: 2px solid var(--back-color-one);
+	border-right: 2px solid var(--back-color-one);
+	border-radius: 15px;
+	margin: 0 0.3em;
+	font-size: 0.65em;
+	padding: 0.3em;
+	text-align: center;
+}
+.character-sheet div > .row .big-element strong {
+	font-size: 1.7em;
+}
+
+.character-sheet .attr-skills .attribute:hover span {
+	transform: scale(1.5);
+}
+
+.character-sheet .hitpoints {
+	grid-area: hitpoints;
+}
+
+.character-sheet .roleplay {
+	grid-area: roleplay;
+	padding-right: 0.5em;
+}
+
+.character-sheet .attacks {
+	grid-area: attacks;
+}
+
+.character-sheet .proficiencies {
+	grid-area: proficiencies;
+	padding: 0em 0.5em;
+}
+
+.character-sheet .equipment {
+	grid-area: equipment;
+}
+
+.character-sheet .features {
+	grid-area: features;
+}
+
+.character-sheet h2 {
+	font-family: var(--fontSubTitle);
+	padding: 0.75em;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.character-sheet .data {
+	margin-top: 1em;
+	margin-right: 1em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1em;
+	font-size: 0.8em;
+}
+
+.character-sheet .data .element span {
+	display: block;
+	border-top: 1px dotted black;
+	font-size: 0.7em;
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+	text-transform: uppercase;
+}

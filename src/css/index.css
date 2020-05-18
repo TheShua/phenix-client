@@ -14,7 +14,7 @@
 
 @font-face {
 	font-family: 'Alegreya Sans SC';
-	src: url('/fonts/AlegreyaSansSC-Black');
+	src: url('/fonts/AlegreyaSansSC-Black.ttf');
 }
 
 :root {
@@ -23,8 +23,12 @@
 	--headBack: #55312d;
 	--subMenuBack: #975442;
 	--fontMain: 'Junge', sans-serif;
-	--fontSubTitle: serif;
-	--fontTitle: 'JosefinSans', serif;
+	--fontTitle: 'Alegreya Sans SC', serif;
+	--fontSubTitle: 'JosefinSans', serif;
+	--color: #e4e6da;
+	--red: #bd1011;
+	--darkRed: #960b0c;
+	--grey: #868686;
 }
 
 html {

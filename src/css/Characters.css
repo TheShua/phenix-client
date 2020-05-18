@@ -1,0 +1,96 @@
+section.list-characters {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+article.character-resume-bloc {
+	background: var(--back-color-two);
+	border-radius: 15px 15px 10px 10px;
+	border: 5px solid var(--back-color-one);
+	border-top: 0;
+	box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.7);
+	width: 25vw;
+	min-width: 300px;
+}
+
+article.character-resume-bloc .head {
+	padding: 1em 0.5em 0;
+	background: var(--back-color-one);
+	border-radius: 10px 10px 0 0;
+	border-bottom: 2px dotted var(--back-color-two);
+	font-family: var(--fontTitle);
+	text-transform: uppercase;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+article.character-resume-bloc .head h3 {
+	font-size: 1.2em;
+	color: var(--color);
+	flex-basis: 100%;
+}
+
+article.character-resume-bloc .head strong {
+	font-size: 0.6em;
+	color: var(--red);
+	margin-bottom: 1em;
+}
+
+article.character-resume-bloc .head strong:nth-child(3) {
+	color: var(--color);
+}
+
+article.character-resume-bloc table {
+	width: 100%;
+}
+
+article.character-resume-bloc table tr {
+	border-bottom: 2px dotted var(--grey);
+}
+
+article.character-resume-bloc table td {
+	width: 25%;
+	line-height: 2em;
+	text-align: center;
+}
+
+article.character-resume-bloc .attr {
+	background: var(--grey);
+	font-family: var(--fontSubTitle);
+}
+
+article.character-resume-bloc .attrVal {
+	font-family: var(--fontSubTitle);
+	color: var(--grey);
+	font-weight: bold;
+}
+article.character-resume-bloc .attr:hover + .attrVal,
+article.character-resume-bloc .attrVal:hover {
+	background: var(--back-color-one);
+	color: var(--darkRed);
+}
+
+article.character-resume-bloc .big-button {
+	width: 80%;
+	display: block;
+	margin: 2em auto;
+	border: 1px solid black;
+	background: var(--color);
+	color: var(--darkRed);
+	box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.7);
+	padding: 1em;
+	font-family: var(--fontTitle);
+	text-transform: uppercase;
+	border-radius: 5px;
+	transition: all 0.2s ease-in;
+	cursor: pointer;
+}
+
+article.character-resume-bloc .big-button:hover {
+	box-shadow: none;
+	background: var(--darkRed);
+	color: var(--color);
+}
