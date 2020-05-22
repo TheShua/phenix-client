@@ -57,7 +57,7 @@ class CharacterSheet extends Component {
 							<span>Class &amp; level</span>
 						</div>
 						<div className="element">
-							BACKGROUND
+							Any background...
 							<span>Background</span>
 						</div>
 						<div className="element">
@@ -77,179 +77,187 @@ class CharacterSheet extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="attr-skills">
+				<div className="bodySheet">
 					<div className="column">
-						<ShowAttribute stat={{ name: 'Strength', value: this.state.sheet.strength }} />
-						<ShowAttribute stat={{ name: 'Dexterity', value: this.state.sheet.dexterity }} />
-						<ShowAttribute stat={{ name: 'Constitution', value: this.state.sheet.constitution }} />
-						<ShowAttribute stat={{ name: 'Intelligence', value: this.state.sheet.intelligence }} />
-						<ShowAttribute stat={{ name: 'Wisdom', value: this.state.sheet.wisdom }} />
-						<ShowAttribute stat={{ name: 'Charisma', value: this.state.sheet.charisma }} />
+						<div className="attr-skills">
+							<div className="column">
+								<ShowAttribute stat={{ name: 'Strength', value: this.state.sheet.strength }} />
+								<ShowAttribute stat={{ name: 'Dexterity', value: this.state.sheet.dexterity }} />
+								<ShowAttribute stat={{ name: 'Constitution', value: this.state.sheet.constitution }} />
+								<ShowAttribute stat={{ name: 'Intelligence', value: this.state.sheet.intelligence }} />
+								<ShowAttribute stat={{ name: 'Wisdom', value: this.state.sheet.wisdom }} />
+								<ShowAttribute stat={{ name: 'Charisma', value: this.state.sheet.charisma }} />
+							</div>
+							<div className="column">
+								<div className="little-bloc inspiration">
+									Inspiration <span>{this.state.sheet.inspiration ? 'Y' : 'N'}</span>
+								</div>
+								<div className="little-bloc inspiration">
+									Proficiency bonus <span>{this.showProficiency(true)}</span>
+								</div>
+								<div className="big-bloc saves">
+									<ShowSave stat="str" value={this.state.sheet.strength} classe={this.state.sheet.classe[0]} />
+									<ShowSave stat="dex" value={this.state.sheet.dexterity} classe={this.state.sheet.classe[0]} />
+									<ShowSave stat="con" value={this.state.sheet.constitution} classe={this.state.sheet.classe[0]} />
+									<ShowSave stat="int" value={this.state.sheet.intelligence} classe={this.state.sheet.classe[0]} />
+									<ShowSave stat="wis" value={this.state.sheet.wisdom} classe={this.state.sheet.classe[0]} />
+									<ShowSave stat="cha" value={this.state.sheet.charisma} classe={this.state.sheet.classe[0]} />
+									<h4>Saving throws</h4>
+								</div>
+								<div className="big-bloc skills">
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Acrobatics <em>(Dex)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Animal Handling <em>(Wis)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Arcana <em>(Int)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Athletics <em>(Str)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Deception <em>(Cha)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... History <em>(Int)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Insight <em>(Wis)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Intimidation <em>(Cha)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Investigation <em>(Int)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Medicine <em>(Wis)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Nature <em>(Int)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Perception <em>(Wis)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Performance <em>(Cha)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Persuasion <em>(Cha)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Religion <em>(Int)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Sleight of Hand <em>(Dex)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Stealth <em>(Dex)</em>
+									</span>
+									<span>
+										<FontAwesomeIcon icon={emptyCircle} /> ... Survival <em>(Wis)</em>
+									</span>
+									<h4>Skills</h4>
+								</div>
+							</div>
+						</div>
+						<div className="proficiencies">
+							<div className="little-bloc">
+								Passive wisdom (perception) <span>{showModifier(this.state.sheet.wisdom)}</span>
+							</div>
+							<div className="big-bloc" style={{ paddingTop: '125px' }}>
+								<h4>Other proficiencies &amp; languages</h4>
+							</div>
+						</div>
 					</div>
 					<div className="column">
-						<div className="little-bloc inspiration">
-							Inspiration <span>{this.state.sheet.inspiration ? 'Y' : 'N'}</span>
+						<div className="hitpoints">
+							<div className="row three">
+								<div className="big-element ac">
+									<strong>10</strong>
+									<h4>Armor class</h4>
+								</div>
+								<div className="big-element">
+									<strong>10</strong>
+									<h4>Initiative</h4>
+								</div>
+								<div className="big-element">
+									<strong>{this.state.sheet.speed}</strong>
+									<h4>Speed</h4>
+								</div>
+							</div>
+							<div className="big-bloc top">
+								<span className="sub">{this.state.sheet.hitPointsTotal}</span>
+								<strong>{this.state.sheet.hitPoints}</strong>
+								<h4>Current hit points</h4>
+							</div>
+							<div className="big-bloc bot">
+								<strong>{this.state.sheet.HitPointsAlt}</strong>
+								<h4>Temporary hit points</h4>
+							</div>
+							<div className="row two">
+								<div className="mid-bloc">
+									<span className="sub">
+										{this.state.sheet.classe.map((classe, index) => {
+											const level = this.state.sheet.classe[index].level;
+											return (
+												<span key={index}>
+													{level}d{classe.classe.hit_die}
+												</span>
+											);
+										})}
+									</span>
+									<strong>
+										{this.state.sheet.classe.map((classe, index) => {
+											const level = this.state.sheet.classe[index].level;
+											return (
+												<span key={index}>
+													{level}d{classe.classe.hit_die}
+												</span>
+											);
+										})}
+									</strong>
+									<h4>Hit dice</h4>
+								</div>
+								<div className="mid-bloc death-save">
+									<ShowDeathSaves data={this.state.sheet.deathSaves} />
+									<h4>Death save</h4>
+								</div>
+							</div>
 						</div>
-						<div className="little-bloc inspiration">
-							Proficiency bonus <span>{this.showProficiency(true)}</span>
+						<div className="attacks">
+							<div className="big-bloc" style={{ paddingTop: '180px' }}>
+								<h4>Attacks &amp; spellcasting</h4>
+							</div>
 						</div>
-						<div className="big-bloc saves">
-							<ShowSave stat="str" value={this.state.sheet.strength} classe={this.state.sheet.classe[0]} />
-							<ShowSave stat="dex" value={this.state.sheet.dexterity} classe={this.state.sheet.classe[0]} />
-							<ShowSave stat="con" value={this.state.sheet.constitution} classe={this.state.sheet.classe[0]} />
-							<ShowSave stat="int" value={this.state.sheet.intelligence} classe={this.state.sheet.classe[0]} />
-							<ShowSave stat="wis" value={this.state.sheet.wisdom} classe={this.state.sheet.classe[0]} />
-							<ShowSave stat="cha" value={this.state.sheet.charisma} classe={this.state.sheet.classe[0]} />
-							<h4>Saving throws</h4>
-						</div>
-						<div className="big-bloc skills">
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<span>
-								<FontAwesomeIcon icon={emptyCircle} /> ... Skill
-							</span>
-							<h4>Skills</h4>
+						<div className="equipment">
+							<div className="big-bloc" style={{ paddingTop: '190px' }}>
+								<h4>Equipment</h4>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className="hitpoints">
-					<div className="row three">
-						<div className="big-element ac">
-							<strong>10</strong>
-							<h4>Armor class</h4>
+					<div className="column">
+						<div className="roleplay">
+							<div className="big-bloc top" style={{ paddingTop: '70px' }}>
+								<h4>Personality traits</h4>
+							</div>
+							<div className="big-bloc mid" style={{ paddingTop: '70px' }}>
+								<h4>Ideals</h4>
+							</div>
+							<div className="big-bloc mid" style={{ paddingTop: '70px' }}>
+								<h4>Bonds</h4>
+							</div>
+							<div className="big-bloc bot" style={{ paddingTop: '70px' }}>
+								<h4>Flaws</h4>
+							</div>
 						</div>
-						<div className="big-element">
-							<strong>10</strong>
-							<h4>Initiative</h4>
+						<div className="features">
+							<div className="big-bloc" style={{ paddingTop: '320px' }}>
+								<h4>Features &amp; traits</h4>
+							</div>
 						</div>
-						<div className="big-element">
-							<strong>{this.state.sheet.speed}</strong>
-							<h4>Speed</h4>
-						</div>
-					</div>
-					<div className="big-bloc top">
-						<span className="sub">{this.state.sheet.hitPointsTotal}</span>
-						<strong>{this.state.sheet.hitPoints}</strong>
-						<h4>Current hit points</h4>
-					</div>
-					<div className="big-bloc bot">
-						<strong>{this.state.sheet.HitPointsAlt}</strong>
-						<h4>Temporary hit points</h4>
-					</div>
-					<div className="row two">
-						<div className="mid-bloc">
-							<span className="sub">
-								{this.state.sheet.classe.map((classe, index) => {
-									const level = this.state.sheet.classe[index].level;
-									return (
-										<span key={index}>
-											{level}d{classe.classe.hit_die}
-										</span>
-									);
-								})}
-							</span>
-							<strong>
-								{this.state.sheet.classe.map((classe, index) => {
-									const level = this.state.sheet.classe[index].level;
-									return (
-										<span key={index}>
-											{level}d{classe.classe.hit_die}
-										</span>
-									);
-								})}
-							</strong>
-							<h4>Hit dice</h4>
-						</div>
-						<div className="mid-bloc death-save">
-							<ShowDeathSaves data={this.state.sheet.deathSaves} />
-							<h4>Death save</h4>
-						</div>
-					</div>
-				</div>
-				<div className="roleplay">
-					<div className="big-bloc top">
-						<h4>Personality traits</h4>
-					</div>
-					<div className="big-bloc mid">
-						<h4>Ideals</h4>
-					</div>
-					<div className="big-bloc mid">
-						<h4>Bonds</h4>
-					</div>
-					<div className="big-bloc bot">
-						<h4>Flaws</h4>
-					</div>
-				</div>
-				<div className="attacks">
-					<div className="big-bloc">
-						<h4>Attacks &amp; spellcasting</h4>
-					</div>
-				</div>
-				<div className="features">
-					<div className="big-bloc">
-						<h4>Features &amp; traits</h4>
-					</div>
-				</div>
-				<div className="proficiencies">
-					<div className="little-bloc">
-						Passive wisdom (perception) <span>{showModifier(this.state.sheet.wisdom)}</span>
-					</div>
-					<div className="big-bloc">
-						<h4>Other proficiencies &amp; languages</h4>
-					</div>
-				</div>
-				<div className="equipment">
-					<div className="big-bloc">
-						<h4>Equipment</h4>
 					</div>
 				</div>
 			</article>
