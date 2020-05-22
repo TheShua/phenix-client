@@ -64,6 +64,7 @@
 
 .subMenu {
 	background: var(--subMenuBack);
+	font-family: var(--fontSubTitle);
 	position: absolute;
 	top: -20vh;
 	z-index: 1;
@@ -80,12 +81,17 @@
 	grid-template-columns: repeat(1, 1fr 2fr);
 }
 
+.subMenu li > span,
+.subMenu li > div > span {
+	color: orange;
+}
+
 .subMenu li.link {
 	cursor: pointer;
 }
 
 .subMenu li div {
-	width: 15%;
+	width: 20%;
 	display: inline-block;
 	text-align: center;
 }

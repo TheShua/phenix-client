@@ -1,0 +1,57 @@
+section.edit-profile {
+	background: var(--headBack);
+	margin: 2vw;
+	padding: 1vw;
+}
+
+section.edit-profile h2 {
+	text-align: center;
+	font-size: 1.9em;
+}
+
+section.edit-profile form.main {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	padding: 3vw 5vw;
+}
+
+section.edit-profile .element {
+	padding: 1vh 0;
+}
+
+section.edit-profile .element label {
+	display: inline-block;
+	font-family: var(--fontSubTitle);
+	border-bottom: 2px dotted var(--back-color-one);
+	padding-bottom: 0.2em;
+	width: 25%;
+}
+
+section.edit-profile .element input {
+	width: 75%;
+}
+
+section.edit-profile label.avatar {
+	display: flex;
+	justify-content: center;
+	padding-top: 1em;
+}
+
+section.edit-profile label.avatar img {
+	border: 5px solid var(--back-color-one);
+	box-sizing: content-box;
+	width: 175px;
+	height: 175px;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+section.edit-profile .feedbacks {
+	text-align: center;
+	color: var(--darkRed);
+	background: var(--color);
+	width: 70%;
+	margin: 30px auto 0;
+	padding: 1em 0;
+	border: 2px solid var(--darkRed);
+	border-radius: 15px;
+}

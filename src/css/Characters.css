@@ -2,6 +2,7 @@ section.list-characters {
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
+	box-shadow: none;
 }
 
 article.character-resume-bloc {

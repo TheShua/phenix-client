@@ -8,6 +8,8 @@ import ProtectedRoute from './ProtectedRoute';
 import DashBoard from '../pages/DashBoard';
 import Mailbox from '../pages/Mailbox';
 import NewMessageForm from './Forms/NewMessageForm';
+import Profile from '../pages/Profile';
+import PublicProfile from '../pages/PublicProfile';
 import Characters from '../pages/Characters';
 import CharacterSheet from '../pages/CharacterSheet';
 import Tables from '../pages/Tables';
@@ -22,6 +24,8 @@ function App(props) {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<ProtectedRoute exact path="/dashboard" component={DashBoard} />
+					<ProtectedRoute exact path="/profile" component={Profile} />
+					<Route path="/profile/:name" component={PublicProfile} />
 					<ProtectedRoute exact path="/mailbox" component={Mailbox} />
 					<ProtectedRoute exact path="/mailbox/new" component={NewMessageForm} />
 					<ProtectedRoute exact path="/characters" component={Characters} />

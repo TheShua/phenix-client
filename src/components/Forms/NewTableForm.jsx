@@ -27,7 +27,7 @@ class NewTableForm extends Component {
 		apiHandler
 			.createTable(data)
 			.then((APIResult) => {
-				this.props.history.push('/tables');
+				this.props.subForm();
 			})
 			.catch((APIError) => console.log(APIError));
 	};

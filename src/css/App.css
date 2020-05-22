@@ -19,4 +19,61 @@ aside.sidebar {
 	background: #311f1d;
 	border-right: 15px solid #55312d;
 	height: 100%;
+	padding-top: 100px;
+}
+
+.sidebar h2 {
+	font-size: 1.5em;
+	margin: 0.5em;
+}
+
+.sidebar article {
+	display: flex;
+	flex-direction: column;
+	background: var(--back-color-two);
+	background: var(--grey);
+	border: 5px solid var(--back-color-one);
+	border-radius: 20px 20px 10px 10px;
+	margin: 0 1vw 5vh;
+}
+
+.sidebar article.bloc .head {
+	padding: 1em 0.5em 0;
+	background: var(--back-color-one);
+	border-radius: 10px 10px 0 0;
+	border-bottom: 2px dotted var(--back-color-two);
+	font-family: var(--fontTitle);
+	text-transform: uppercase;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.sidebar article.bloc .head h3 {
+	font-size: 0.9em;
+	color: var(--color);
+	flex-basis: 100%;
+	font-family: var(--fontTitle);
+}
+
+.sidebar article.bloc .head strong {
+	font-size: 0.7em;
+	color: var(--darkRed);
+	display: block;
+	padding: 0.5em 0;
+}
+
+.sidebar article.bloc h4 {
+	padding: 1em;
+}
+
+.sidebar article.bloc button {
+	width: 50%;
+	margin: 10px auto;
+	position: relative;
+}
+
+.sidebar article.bloc button:hover {
+	margin-top: 13px;
 }

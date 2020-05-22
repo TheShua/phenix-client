@@ -56,3 +56,8 @@ a {
 	color: #000;
 	text-decoration: none;
 }
+
+input:focus,
+textarea:focus {
+	outline: 0;
+}

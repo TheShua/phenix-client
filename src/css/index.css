@@ -9,7 +9,7 @@
 @font-face {
 	font-family: 'JosefinSans';
 	src: url('/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype-variations');
-	font-weight: 100 900;
+	font-weight: 900;
 }
 
 @font-face {
@@ -26,9 +26,11 @@
 	--fontTitle: 'Alegreya Sans SC', serif;
 	--fontSubTitle: 'JosefinSans', serif;
 	--color: #e4e6da;
+	--grey: #868686;
 	--red: #bd1011;
 	--darkRed: #960b0c;
-	--grey: #868686;
+	--greenLight: #c2d5b0;
+	--green: #6aa120;
 }
 
 html {
@@ -65,4 +67,83 @@ code {
 h1 {
 	font-family: var(--fontTitle);
 	font-variation-settings: 'wght' 450;
+}
+
+h2 {
+	font-size: 1.7em;
+	font-family: var(--fontTitle);
+	font-variation-settings: 'wght' 450;
+	text-align: right;
+}
+
+main section {
+	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+input {
+	padding: 0.35em 0.5em;
+	font-family: var(--fontTitle);
+	background: var(--subMenuBack);
+	border-radius: 10px;
+	border: 2px solid var(--back-color-one);
+	font-size: 1.15em;
+}
+
+input:focus {
+	border: 2px solid var(--color);
+}
+
+button {
+	cursor: pointer;
+	border: 2px solid var(--back-color-one);
+	border-bottom: 5px solid var(--back-color-one);
+	background: var(--back-color-two);
+	border-radius: 6px;
+	padding: 1em;
+	font-family: var(--fontSubTitle);
+	font-weight: bold;
+	text-transform: uppercase;
+	color: var(--color);
+	position: relative;
+}
+
+button + button {
+	margin-left: 10px;
+}
+
+button:focus {
+	outline: 0;
+}
+
+button:hover {
+	border-bottom: 2px solid var(--back-color-one);
+	margin-top: 3px;
+}
+
+button.red {
+	background: var(--darkRed);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	/* border: 1px solid green; */
+	border: 0;
+	-webkit-text-fill-color: #000;
+	-webkit-box-shadow: 0 0 0px 1000px var(--subMenuBack) inset;
+	box-shadow: 0 0 0px 1000px var(--subMenuBack) inset;
+	padding: 0.25em;
+	font-family: var(--fontTitle);
+	font-size: 1.15em;
+	/* transition: background-color 5000s ease-in-out 0s; */
+}
+
+main section {
+	margin: 2vw;
+	border-radius: 10px;
 }

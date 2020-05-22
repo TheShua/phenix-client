@@ -1,11 +1,10 @@
 .add-me {
-	color: #c2d5b0;
+	color: var(--greenLight);
 }
 
 .list-players {
 	display: flex;
 	flex-direction: column;
-	width: 250px;
 }
 
 .list-players li {
@@ -21,9 +20,9 @@
 }
 
 .list-players li:hover .add-me {
-	color: #6aa120;
+	color: var(--green);
 }
 
 .list-players li:hover {
-	background: #c2d5b0;
+	background: var(--greenLight);
 }

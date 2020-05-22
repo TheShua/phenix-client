@@ -39,10 +39,7 @@ class InputPlayerSearch extends Component {
 			.addPlayerToTable(this.props.table._id, player._id)
 			.then((APIResult) => {
 				this.setState({ players: null, value: '' });
-				apiHandler
-					.getTable(this.props.table._id)
-					.then((APIResult2) => this.setState({ table: APIResult2 }))
-					.catch((APIERrror2) => console.log(APIERrror2));
+				this.props.clbk();
 			})
 			.catch((APIError) => console.log(APIError));
 	};

@@ -45,7 +45,7 @@
 .overlay .main {
 	background: #fff;
 	border-radius: 20px;
-	padding: 20px;
+	padding: 2vw;
 	width: 60vw;
 	position: relative;
 }
@@ -72,4 +72,56 @@ section.flex .left,
 section.flex .right {
 	width: 50%;
 	padding: 0 2vw;
+}
+
+form .buttons {
+	margin-top: 1em;
+}
+
+table.dates-checking {
+	width: 100%;
+}
+
+table.dates-checking td:not(:first-child) {
+	font-size: 0.8em;
+	font-family: var(--fontSubTitle);
+	text-align: center;
+	max-width: 50px;
+}
+
+table.dates-checking td:first-child {
+	font-size: 0.8em;
+	font-family: var(--fontTitle);
+	padding: 0 1em;
+	table-layout: fixed;
+}
+
+table.dates-checking td {
+	line-height: 3em;
+}
+
+table.dates-checking tr:first-child td {
+	line-height: 1em;
+}
+
+table.dates-checking tr:not(:first-child) td:not(:first-child):hover {
+	background: var(--color);
+	cursor: pointer;
+}
+
+table.dates-checking tr:not(:first-child):hover {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+table.dates-checking td.self-selected {
+	background: var(--green);
+}
+
+table.dates-checking td.selected {
+	background: var(--greenLight);
+}
+
+.overlay .main .buttons {
+	text-align: center;
+	margin-top: 0.5em;
 }

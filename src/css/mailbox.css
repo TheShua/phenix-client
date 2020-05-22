@@ -1,0 +1,191 @@
+form.mailbox {
+	margin: 0 auto;
+	margin-top: 5vh;
+	background: var(--headBack);
+	padding: 4vh;
+	width: 90%;
+}
+
+form.mailbox .element {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+form.mailbox .element label {
+	width: 20%;
+}
+
+form.mailbox .element input,
+form.mailbox .element textarea {
+	border-radius: 10px;
+	background: var(--subMenuBack);
+	border: 2px solid var(--color);
+	font-size: 1.1em;
+	padding: 0.3em;
+	width: 100%;
+}
+
+form.mailbox .element > ul {
+	background: var(--subMenuBack);
+	width: 100%;
+	display: flex;
+	border: 2px solid var(--color);
+	border-radius: 10px;
+	padding: 0.3em;
+	flex-wrap: wrap;
+}
+
+form.mailbox .element > ul > li {
+	margin-right: 0.3em;
+	position: relative;
+}
+
+form.mailbox .element > ul > li > span.bloc {
+	margin: 0.3em 0;
+	font-size: 0.8em;
+	padding: 0.2em;
+	display: block;
+	background: #c2d5b0;
+	border-radius: 5px;
+}
+
+form.mailbox .element > ul > li > span.bloc > span {
+	font-size: 0.6em;
+	position: relative;
+	top: -0.5em;
+	margin-left: 1em;
+	padding-right: 0.2em;
+}
+
+form.mailbox .element > ul > li > span.bloc:hover {
+	cursor: pointer;
+	background: var(--darkRed);
+	color: var(--color);
+}
+
+form.mailbox .element > ul > li > input {
+	border: 0;
+	background: none;
+	border-radius: 0;
+	width: 100%;
+	padding: 0;
+}
+
+form.mailbox .element ul ul {
+	width: 100%;
+	position: absolute;
+}
+
+form.mailbox .element textarea {
+	width: 100%;
+	height: 20vh;
+	resize: none;
+}
+
+/* -------------------------------------------------------- */
+
+section.list-messages {
+	background: var(--subMenuBack);
+	margin: 2vw;
+	border-radius: 10px;
+	padding: 1vw;
+}
+
+section.list-messages table.mess {
+	background: var(--headBack);
+	width: 100%;
+	/* border: 2px solid #311f1d; */
+	font-size: 0.8em;
+	border-radius: 10px;
+	border-spacing: 1;
+	border-collapse: collapse;
+}
+
+section.list-messages table.mess thead tr {
+	background: #311f1d;
+}
+
+section.list-messages table.mess th {
+	padding: 1em 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.7em;
+	/* text-align: left; */
+	color: var(--color);
+}
+section.list-messages table.mess tr {
+	border-bottom: 1px solid var(--back-color-one);
+}
+section.list-messages table.mess tr:last-child {
+	border-bottom: 0;
+}
+
+section.list-messages tr.message {
+	padding: 0.5em;
+	/* border-radius: 10px 10px 0 0; */
+}
+
+section.list-messages td {
+	/* border-bottom: 5px solid #311f1d; */
+	padding: 0.3em;
+}
+
+section.list-messages tr.message:hover td {
+	/* background: var(--color); */
+}
+
+section.list-messages tr.message .date {
+	font-family: var(--fontSubTitle);
+	width: 15%;
+}
+section.list-messages tr.message .date svg,
+section.list-messages tr.message .title svg {
+	margin-right: 5px;
+}
+
+section.list-messages tr.message .author {
+	font-weight: bold;
+	font-family: var(--fontSubTitle);
+	width: 15%;
+}
+
+section.list-messages tr.message .actions {
+	width: 5%;
+	text-align: center;
+}
+section.list-messages tr.message .actions button {
+	min-width: 50px;
+}
+
+section.list-messages tr.message .title {
+	width: 50vw;
+}
+
+section.list-messages tr.message .title.active {
+	background: var(--subMenuBack);
+	padding: 0;
+}
+
+section.list-messages tr.message .title strong {
+	font-weight: bold;
+	padding: 0 1em;
+}
+
+section.list-messages tr.message pre.messageBody {
+	/* display: none; */
+	max-height: 0;
+	overflow: hidden;
+	/* transition: max-height 0.2s ease-in; */
+	background: var(--subMenuBack);
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+
+section.list-messages tr.message pre.messageBody.on {
+	/* display: block; */
+	max-height: 500px;
+	padding: 0.5em;
+	margin-top: 15px;
+	border-top: 3px solid #311f1d;
+	background: var(--headBack);
+}

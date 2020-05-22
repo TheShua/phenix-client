@@ -45,9 +45,23 @@ export default {
 			.catch(errorHandler);
 	},
 
+	updateProfile(id, data) {
+		return service
+			.patch(`/api/users/${id}`, data)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
 	searchUser(data) {
 		return service
 			.get(`/api/users?search=${data}`)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	searchUsersAndTables(data) {
+		return service
+			.get(`/api/users?search=${data}&param=all`)
 			.then((res) => res.data)
 			.catch(errorHandler);
 	},
@@ -59,6 +73,27 @@ export default {
 		}
 		return service
 			.get(`/api/mailbox/${id}${params}`)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	sendMessage(data) {
+		return service
+			.post('/api/mailbox', data)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	updateMessage(id, data) {
+		return service
+			.patch(`/api/mailbox/${id}`, data)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	deleteMessage(id) {
+		return service
+			.delete(`/api/mailbox/${id}`)
 			.then((res) => res.data)
 			.catch(errorHandler);
 	},
@@ -91,9 +126,9 @@ export default {
 			.catch(errorHandler);
 	},
 
-	getTable(id) {
+	getTable(id, populated = false) {
 		return service
-			.get(`/api/tables/${id}`)
+			.get(`/api/tables/${id}?pop=${populated}`)
 			.then((res) => res.data)
 			.catch(errorHandler);
 	},
@@ -105,9 +140,9 @@ export default {
 			.catch(errorHandler);
 	},
 
-	getAllMyTables(id) {
+	getAllMyTables(id, populate) {
 		return service
-			.get(`/api/tables/${id}/all`)
+			.get(`/api/tables/${id}/all?populated=true`)
 			.then((res) => res.data)
 			.catch(errorHandler);
 	},
@@ -119,9 +154,51 @@ export default {
 			.catch(errorHandler);
 	},
 
+	checkSessionToTable(id, data) {
+		return service
+			.post(`/api/mailbox/${id}/table?type=schedule`, data)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	getNextSessionTable(id) {
+		return service
+			.get(`/api/sessions/${id}/last`)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
 	getAllTableSessions(id) {
 		return service
 			.get(`/api/sessions?table=${id}`)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	getSession(id) {
+		return service
+			.get(`/api/sessions/${id}`)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	updateSession(id, data) {
+		return service
+			.patch(`/api/sessions/${id}`, data)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	updateSessionSchedule(id, data) {
+		return service
+			.patch(`/api/sessions/${id}/edit`, data)
+			.then((res) => res.data)
+			.catch(errorHandler);
+	},
+
+	getAllMyNextSessions(id) {
+		return service
+			.get(`/api/sessions/${id}/next`)
 			.then((res) => res.data)
 			.catch(errorHandler);
 	},

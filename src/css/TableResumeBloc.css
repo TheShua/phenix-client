@@ -1,0 +1,94 @@
+section.list-tables {
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	display: flex;
+	padding: 1vw;
+	box-shadow: none;
+}
+
+article.bloc-table {
+	width: 25vw;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+	background: var(--back-color-two);
+	border: 5px solid var(--back-color-one);
+	border-radius: 15px 15px 10px 10px;
+	margin: 0 2vw 5vh 0;
+}
+
+article.bloc-table .head {
+	padding: 1em 0.5em 0;
+	background: var(--back-color-one);
+	border-radius: 10px 10px 0 0;
+	border-bottom: 2px dotted var(--back-color-two);
+	font-family: var(--fontTitle);
+	text-transform: uppercase;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+article.bloc-table .head strong {
+	font-size: 0.7em;
+	color: var(--darkRed);
+	display: block;
+	padding: 0.5em 0;
+}
+
+article.bloc-table .player-list {
+	/* margin: 1em 0; */
+	border-top: 2px dotted black;
+	/* border-bottom: 2px dotted black; */
+}
+
+article.bloc-table .player-list > li {
+	padding: 0.5em 0.2em;
+	font-size: 0.8em;
+	font-weight: bold;
+	font-family: var(--fontSubTitle);
+	background: var(--grey);
+	border-bottom: 2px dotted black;
+}
+
+article.bloc-table .player-list > li svg {
+	margin-left: 0.5vw;
+	margin-right: 0.75vw;
+}
+
+article.bloc-table .player-list > li.dm {
+	color: var(--darkRed);
+}
+
+article.bloc-table .player-list > li.center {
+	text-align: center;
+}
+
+article.bloc-table .btn {
+	background: var(--greenLight);
+	border: 0;
+	padding: 1em 0;
+	text-transform: uppercase;
+	font-family: var(--fontSubTitle);
+	font-size: 0.7em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+article.bloc-table .btn:hover {
+	background: var(--green);
+}
+
+article.bloc-table input {
+	font-size: 0.9em;
+	padding: 0.3em;
+	font-family: var(--fontSubTitle);
+}
+
+.bloc-table h3 {
+	font-size: 1.2em;
+	color: var(--color);
+	flex-basis: 100%;
+	font-family: var(--fontTitle);
+}

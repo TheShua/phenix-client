@@ -5,6 +5,7 @@ import UserContext from '../components/Auth/UserContext';
 import TableResumeBloc from '../components/TableResumeBloc';
 import apiHandler from '../api/apiHandler';
 import Loader from '../components/Loader';
+import '../css/TableResumeBloc.css';
 
 class Tables extends Component {
 	static contextType = UserContext;
@@ -12,7 +13,17 @@ class Tables extends Component {
 
 	componentDidMount = () => {
 		apiHandler
-			.getAllMyTables(this.context.user._id)
+			.getAllMyTables(this.context.user._id, true)
+			.then((APIResult) => {
+				this.setState({ listTablesDM: APIResult.dm, listTablesPlayer: APIResult.player });
+			})
+			.catch((APIError) => console.log(APIError));
+	};
+
+	handleSubmitForm = () => {
+		this.handleClickForm();
+		apiHandler
+			.getAllMyTables(this.context.user._id, true)
 			.then((APIResult) => {
 				this.setState({ listTablesDM: APIResult.dm, listTablesPlayer: APIResult.player });
 			})
@@ -31,19 +42,40 @@ class Tables extends Component {
 		this.setState({ create: false, addSession: id });
 	};
 
+	updateList = () => {
+		apiHandler
+			.getAllMyTables(this.context.user._id, true)
+			.then((APIResult) => {
+				this.setState({ listTablesDM: APIResult.dm });
+			})
+			.catch((APIError) => console.log(APIError));
+	};
+
 	render() {
 		if (!this.state.listTablesDM) return <Loader />;
 		return (
 			<main>
-				{!this.state.create && <button onClick={this.handleClickForm}>Create a table</button>}
-				{this.state.create && <NewTableForm close={this.handleClickForm} />}
+				<div className="ignore">
+					{!this.state.create && <button onClick={this.handleClickForm}>Create a table</button>}
+				</div>
+				{this.state.create && <NewTableForm close={this.handleClickForm} subForm={this.handleSubmitForm} />}
 				{this.state.addSession && <AddSessionForm data={this.state.addSession} close={this.handleCloseSessionForm} />}
-				{this.state.listTablesDM.map((table, index) => {
-					return <TableResumeBloc key={index} data={table} createSession={this.handleCreateSession} />;
-				})}
-				{this.state.listTablesPlayer.map((table, index) => {
-					return <TableResumeBloc key={index} data={table} />;
-				})}
+
+				<section className="list-tables">
+					{this.state.listTablesDM.map((table, index) => {
+						return (
+							<TableResumeBloc
+								key={index}
+								data={table}
+								update={this.updateList}
+								createSession={this.handleCreateSession}
+							/>
+						);
+					})}
+					{this.state.listTablesPlayer.map((table, index) => {
+						return <TableResumeBloc key={index} data={table} />;
+					})}
+				</section>
 			</main>
 		);
 	}

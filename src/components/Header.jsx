@@ -15,6 +15,7 @@ import {
 	faEnvelopeOpenText,
 	faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
+// import io from 'socket.io-client';
 import apiHandler from '../api/apiHandler';
 import '../css/header.css';
 
@@ -26,7 +27,11 @@ class Header extends React.Component {
 	};
 
 	componentDidMount = () => {
-		if (this.context.user) this.checkNewPM();
+		if (this.context.isLoggedIn) this.checkNewPM();
+		// const socket = io(process.env.REACT_APP_BACKEND_URL);
+		// socket.on('message', (col) => {
+		// 	console.log('message : ' + col);
+		// });
 	};
 
 	handleLogout = () => {
@@ -38,12 +43,17 @@ class Header extends React.Component {
 
 	toggleSubMenu = () => {
 		this.setState({ toggle: !this.state.toggle });
+		this.checkNewPM();
 	};
 
 	checkNewPM = () => {
+		if (!this.context.user) return;
 		apiHandler
-			.getMyMessages(this.context.user_id, 'unread')
-			.then((APIResult) => {})
+			.getMyMessages(this.context.user._id, 'unread')
+			.then((APIResult) => {
+				console.log(APIResult);
+				this.setState({ newPM: APIResult.length });
+			})
 			.catch((APIError) => console.log(APIError));
 	};
 
@@ -96,7 +106,7 @@ class Header extends React.Component {
 										<div>
 											<FontAwesomeIcon icon={faHouseUser} />
 										</div>
-										<span>Dashboard</span>
+										Dashboard
 									</li>
 								</NavLink>
 								<NavLink to="/profile">
@@ -104,19 +114,28 @@ class Header extends React.Component {
 										<div>
 											<FontAwesomeIcon icon={faUserCircle} />
 										</div>
-										<span>Profile</span>
+										Profile
 									</li>
 								</NavLink>
 								<NavLink to="/mailbox">
 									<li>
-										<div>
-											{this.state.newPM ? (
-												<FontAwesomeIcon icon={faEnvelopeOpenText} />
-											) : (
-												<FontAwesomeIcon icon={faEnvelope} />
-											)}
-										</div>
-										Mailbox
+										{this.state.newPM ? (
+											<React.Fragment>
+												<div>
+													<span>
+														<FontAwesomeIcon icon={faEnvelope} />
+													</span>
+												</div>
+												Mailbox (<span>{this.state.newPM}</span>)
+											</React.Fragment>
+										) : (
+											<React.Fragment>
+												<div>
+													<FontAwesomeIcon icon={faEnvelopeOpenText} />
+												</div>
+												Mailbox
+											</React.Fragment>
+										)}
 									</li>
 								</NavLink>
 								<NavLink to="/characters" className="separator">
