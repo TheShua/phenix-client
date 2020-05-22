@@ -21,6 +21,10 @@
 	text-align: right;
 }
 
+.overlay input {
+	background: var(--color);
+}
+
 .overlay .close-me {
 	position: absolute;
 	top: -20px;
@@ -45,7 +49,7 @@
 .overlay .main {
 	background: #fff;
 	border-radius: 20px;
-	padding: 2vw;
+	padding: 1vw;
 	width: 60vw;
 	position: relative;
 }
@@ -61,17 +65,33 @@
 }
 
 form .short {
-	width: 35px;
+	width: 55px;
+	padding: 0.2em;
 }
 
 section.flex {
 	display: flex;
+	box-shadow: none;
+}
+
+.flex .right {
+	display: flex;
+	flex-wrap: wrap;
+}
+.flex .w {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.flex .w label {
+	width: 30%;
 }
 
 section.flex .left,
 section.flex .right {
 	width: 50%;
-	padding: 0 2vw;
+	padding: 0 1.5vw;
 }
 
 form .buttons {

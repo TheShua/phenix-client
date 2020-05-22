@@ -88,12 +88,12 @@ class Header extends React.Component {
 							<SignInForm />
 							No account yet ? <NavLink to="/signup">Sign Up</NavLink>
 							<ul>
-								<NavLink to="/" className="separator">
+								<Link to="/" className="separator">
 									<li>
 										<FontAwesomeIcon icon={faHome} />
 										Home
 									</li>
-								</NavLink>
+								</Link>
 							</ul>
 						</React.Fragment>
 					)}
@@ -101,14 +101,14 @@ class Header extends React.Component {
 					{this.context.isLoggedIn && (
 						<React.Fragment>
 							<ul>
-								<NavLink to="/">
+								<Link to="/">
 									<li>
 										<div>
 											<FontAwesomeIcon icon={faHouseUser} />
 										</div>
 										Home
 									</li>
-								</NavLink>
+								</Link>
 								<NavLink to="/profile">
 									<li>
 										<div>

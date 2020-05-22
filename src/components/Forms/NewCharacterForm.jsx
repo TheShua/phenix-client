@@ -197,66 +197,82 @@ class NewCharacterForm extends Component {
 									{this.state.race && <ShowRaceInfosOnForm race={this.state.race} />}
 								</div>
 								<div className="right">
-									<FormElement
-										type="number"
-										name="str"
-										value={this.state.str}
-										label="STR"
-										class="short"
-										change={this.handleChange}
-										solo={true}
-									/>{' '}
-									<Roll for={(e) => this.handleRoll(e, 'str')} />
-									<FormElement
-										type="number"
-										name="dex"
-										value={this.state.dex}
-										label="DEX"
-										class="short"
-										change={this.handleChange}
-										solo={true}
-									/>{' '}
-									<Roll for={(e) => this.handleRoll(e, 'dex')} />
-									<FormElement
-										type="number"
-										name="con"
-										value={this.state.con}
-										label="CON"
-										class="short"
-										change={this.handleChange}
-										solo={true}
-									/>{' '}
-									<Roll for={(e) => this.handleRoll(e, 'con')} />
-									<FormElement
-										type="number"
-										name="int"
-										value={this.state.int}
-										label="INT"
-										class="short"
-										change={this.handleChange}
-										solo={true}
-									/>{' '}
-									<Roll for={(e) => this.handleRoll(e, 'int')} />
-									<FormElement
-										type="number"
-										name="wis"
-										value={this.state.wis}
-										label="WIS"
-										class="short"
-										change={this.handleChange}
-										solo={true}
-									/>{' '}
-									<Roll for={(e) => this.handleRoll(e, 'wis')} />
-									<FormElement
-										type="number"
-										name="cha"
-										value={this.state.cha}
-										label="CHA"
-										class="short"
-										change={this.handleChange}
-										solo={true}
-									/>{' '}
-									<Roll for={(e) => this.handleRoll(e, 'cha')} />
+									<div className="w">
+										<div>
+											<FormElement
+												type="number"
+												name="str"
+												value={this.state.str}
+												label="STR"
+												class="short"
+												change={this.handleChange}
+												solo={true}
+											/>{' '}
+											<Roll for={(e) => this.handleRoll(e, 'str')} />
+										</div>
+										<div>
+											<FormElement
+												type="number"
+												name="dex"
+												value={this.state.dex}
+												label="DEX"
+												class="short"
+												change={this.handleChange}
+												solo={true}
+											/>{' '}
+											<Roll for={(e) => this.handleRoll(e, 'dex')} />
+										</div>
+										<div>
+											<FormElement
+												type="number"
+												name="con"
+												value={this.state.con}
+												label="CON"
+												class="short"
+												change={this.handleChange}
+												solo={true}
+											/>{' '}
+											<Roll for={(e) => this.handleRoll(e, 'con')} />
+										</div>
+									</div>
+									<div className="w">
+										<div>
+											<FormElement
+												type="number"
+												name="int"
+												value={this.state.int}
+												label="INT"
+												class="short"
+												change={this.handleChange}
+												solo={true}
+											/>{' '}
+											<Roll for={(e) => this.handleRoll(e, 'int')} />
+										</div>
+										<div>
+											<FormElement
+												type="number"
+												name="wis"
+												value={this.state.wis}
+												label="WIS"
+												class="short"
+												change={this.handleChange}
+												solo={true}
+											/>{' '}
+											<Roll for={(e) => this.handleRoll(e, 'wis')} />
+										</div>
+										<div>
+											<FormElement
+												type="number"
+												name="cha"
+												value={this.state.cha}
+												label="CHA"
+												class="short"
+												change={this.handleChange}
+												solo={true}
+											/>{' '}
+											<Roll for={(e) => this.handleRoll(e, 'cha')} />
+										</div>
+									</div>
 								</div>
 							</section>
 							<button onClick={this.handlePrev}>Prev ></button>
