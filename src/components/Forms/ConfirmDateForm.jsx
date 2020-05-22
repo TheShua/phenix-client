@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Loader from '../Loader';
-import { getDate, jsonToFormData } from '../../utils/funcs';
+import { getDate } from '../../utils/funcs';
 import apiHandler from '../../api/apiHandler';
 import { withUser } from '../Auth/withUser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -147,12 +147,12 @@ const ConfirmDateForm = ({ data, context, close }) => {
 
 	const handleSubmit = () => {
 		let updatedSession = { ...data };
-		updatedSession.to.find((x) => x.target === context.user._id).vote = [...availabilities];
+		let newAvailabilities = [...availabilities];
+		newAvailabilities.map((x) => (x === undefined ? false : true));
+		updatedSession.to.find((x) => x.target === context.user._id).vote = newAvailabilities;
 		delete updatedSession._id;
-		const sessionToEdit = jsonToFormData(updatedSession);
-
 		apiHandler
-			.updateSession(data._id, sessionToEdit)
+			.updateSession(data._id, updatedSession)
 			.then((APIresult) => {
 				close();
 			})

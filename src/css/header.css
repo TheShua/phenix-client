@@ -56,6 +56,8 @@
 	background: radial-gradient(transparent, var(--headBack));
 	border-radius: 50%;
 	border: 10px solid var(--headBack);
+	width: 175px;
+	height: 175px;
 }
 
 .main-head .toggleMenu .picture:hover h3 {
@@ -66,14 +68,19 @@
 	background: var(--subMenuBack);
 	font-family: var(--fontSubTitle);
 	position: absolute;
-	top: -20vh;
+	top: -25vh;
 	z-index: 1;
-	width: calc(8vw + 180px);
+	width: calc(8vw + 175px);
 	line-height: 1.4em;
 	padding: 0 30px 50px;
 	border-radius: 0 0 25px 25px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 	transition: all 0.3s;
+	font-size: 0.8em;
+}
+
+.subMenu input {
+	background: var(--color);
 }
 
 .toggleMenu li {
@@ -96,6 +103,10 @@
 	text-align: center;
 }
 
+.subMenu input {
+	width: 100%;
+}
+
 .subMenu li span {
 	width: 80%;
 }
@@ -114,7 +125,11 @@
 }
 
 .subMenu.toggle {
-	padding-top: 45vh;
+	padding-top: 50vh;
+}
+
+.subMenu form button {
+	margin: 1em 0;
 }
 
 .subMenu .separator {

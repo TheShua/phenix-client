@@ -19,7 +19,7 @@ function App(props) {
 	return (
 		<div className="App">
 			<Header />
-			<div className="bodyApp">
+			<div className={props.context.isLoggedIn ? 'bodyApp' : 'bodyApp off'}>
 				{props.context.isLoggedIn && <Aside />}
 				<Switch>
 					<Route exact path="/" component={Home} />

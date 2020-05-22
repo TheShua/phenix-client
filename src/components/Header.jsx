@@ -101,12 +101,12 @@ class Header extends React.Component {
 					{this.context.isLoggedIn && (
 						<React.Fragment>
 							<ul>
-								<NavLink to="/dashboard">
+								<NavLink to="/">
 									<li>
 										<div>
 											<FontAwesomeIcon icon={faHouseUser} />
 										</div>
-										Dashboard
+										Home
 									</li>
 								</NavLink>
 								<NavLink to="/profile">

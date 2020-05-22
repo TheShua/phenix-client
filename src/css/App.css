@@ -15,6 +15,10 @@
 	grid-template-columns: calc(8vw + 175px) 1fr;
 }
 
+.bodyApp.off {
+	grid-template-columns: 1fr;
+}
+
 aside.sidebar {
 	background: #311f1d;
 	border-right: 15px solid #55312d;

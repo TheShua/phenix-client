@@ -125,3 +125,16 @@ table.dates-checking td.selected {
 	text-align: center;
 	margin-top: 0.5em;
 }
+
+input::placeholder {
+	color: #311f1d;
+	font-size: 0.7em;
+	font-family: var(--fontSubTitle);
+	font-style: italic;
+	opacity: 0.75;
+	transition: opacity 0.2s ease-in;
+}
+
+input:hover::placeholder {
+	opacity: 0.25;
+}

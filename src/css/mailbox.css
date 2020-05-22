@@ -129,10 +129,10 @@ section.list-messages td {
 	/* border-bottom: 5px solid #311f1d; */
 	padding: 0.3em;
 }
-
+/* 
 section.list-messages tr.message:hover td {
-	/* background: var(--color); */
-}
+	background: var(--color);
+} */
 
 section.list-messages tr.message .date {
 	font-family: var(--fontSubTitle);

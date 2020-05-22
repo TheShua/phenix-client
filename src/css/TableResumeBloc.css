@@ -74,10 +74,13 @@ article.bloc-table .btn {
 	font-size: 0.7em;
 	font-weight: bold;
 	cursor: pointer;
+	color: var(--back-color-two);
+	border-radius: 0;
 }
 
 article.bloc-table .btn:hover {
 	background: var(--green);
+	color: var(--color);
 }
 
 article.bloc-table input {

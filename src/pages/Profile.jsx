@@ -26,7 +26,6 @@ const Profile = (props) => {
 		if (event.target.type === 'file') {
 			if (!value) return;
 			let objURL = URL.createObjectURL(value);
-			console.log(objURL);
 			setEditedUser({ ...editedUser, tempAvatar: objURL, [key]: value });
 		} else {
 			setEditedUser({ ...editedUser, [key]: value });
@@ -66,6 +65,7 @@ const Profile = (props) => {
 			apiHandler
 				.updateProfile(user._id, form)
 				.then((APIResult) => {
+					props.context.setUser(APIResult);
 					setFeedBack('Your profile has been successfully edited !');
 				})
 				.catch((APIError) => console.log(APIError));

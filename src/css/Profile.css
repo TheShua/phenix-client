@@ -3,6 +3,11 @@ section.edit-profile {
 	margin: 2vw;
 	padding: 1vw;
 }
+section.edit-profile.mid {
+	width: 90%;
+	margin: 2vw auto;
+	padding: 2em;
+}
 
 section.edit-profile h2 {
 	text-align: center;
@@ -31,13 +36,13 @@ section.edit-profile .element input {
 	width: 75%;
 }
 
-section.edit-profile label.avatar {
+section.edit-profile .avatar {
 	display: flex;
 	justify-content: center;
-	padding-top: 1em;
+	margin-top: 0.5em;
 }
 
-section.edit-profile label.avatar img {
+section.edit-profile .avatar img {
 	border: 5px solid var(--back-color-one);
 	box-sizing: content-box;
 	width: 175px;
@@ -45,6 +50,13 @@ section.edit-profile label.avatar img {
 	transition: all 0.3s;
 	cursor: pointer;
 }
+
+.edit-profile.mid .avatar img {
+	height: 300px;
+	width: 225px;
+	cursor: default;
+}
+
 section.edit-profile .feedbacks {
 	text-align: center;
 	color: var(--darkRed);

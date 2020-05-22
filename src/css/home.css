@@ -1,0 +1,12 @@
+section.homepage {
+	background: var(--subMenuBack);
+	padding: 1em;
+	text-align: center;
+	margin: 2vw auto;
+	width: 80%;
+}
+
+section.homepage img {
+	border-radius: 5px;
+	border-bottom: 5px solid #311f1d;
+}

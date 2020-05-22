@@ -1,13 +1,16 @@
 import React from 'react';
 import { withUser } from '../components/Auth/withUser';
+import '../css/home.css';
 
 const Home = (props) => {
-	const { context } = props;
+	// const { context } = props;
 	return (
-		<div style={{ marginTop: '300px', textAlign: 'center' }}>
-			<h1>HOMEPAGE DE LA MORT</h1>
-			{context.isLoggedIn && <h1>OUIIIIIIII</h1>}
-		</div>
+		<main>
+			<section className="homepage">
+				<h2>HOMEPAGE</h2>
+				<img src="/temp/warriors.jpg" alt="" />
+			</section>
+		</main>
 	);
 };
 
